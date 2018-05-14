@@ -1,7 +1,9 @@
 import { Layout, Icon } from 'antd';
 import React, { Component } from 'react';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import MenuList from './menu.js'
 import './home.css';
+import {route} from './../../route.js'
 const { Header, Sider, Content } = Layout;
 
 
@@ -10,7 +12,7 @@ export default class SiderDemo extends React.Component {
     collapsed: false,
   };
   toggle = () => {
-    console.log(1);
+
     this.setState({
       collapsed: !this.state.collapsed,
     });
@@ -36,8 +38,15 @@ export default class SiderDemo extends React.Component {
             />
           </Header>
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280 }}>
-            Content
-          </Content>
+            <Switch>
+              {
+                route.map((item)=>{
+                  console.log(item);
+                  return <Route exact key={item.key} path={item.path} component={item.component} />
+                })
+              }
+            </Switch>
+        </Content>
         </Layout>
       </Layout>
     );

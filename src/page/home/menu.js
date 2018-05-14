@@ -1,7 +1,7 @@
 import  { Menu, Icon, Switch } from 'antd';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import route from './../../route.js'
+import {route} from './../../route.js'
 const SubMenu = Menu.SubMenu;
 
 
@@ -18,7 +18,7 @@ function itemFnc(item) {
   else {
 
     return  <Menu.Item key={item.key}>
-      <Link to={item.path}>
+      <Link to={'/home'}>
       {item.icon?<Icon  type={item.icon} />:null}
       <span>{item.mete.name}</span>
       </Link>
