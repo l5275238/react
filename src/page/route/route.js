@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {parentRoute} from '@/route.js'
 
+console.log(process.env);
+
 class MRoute extends Component {
   render() {
     return (

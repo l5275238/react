@@ -117,6 +117,12 @@
       ]
     ]
   },
+  "proxy": {
+    "/api": {
+      "target": "http://open.douyucdn.cn",
+      "changeOrigin":true
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   }
